@@ -27,6 +27,7 @@
             </ul>
         </nav>
         <div id="layoutSidenav">
+        
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
@@ -34,21 +35,16 @@
                             <div class="sb-sidenav-menu-heading">CATEGORY</div>
                             <a class="nav-link" href="{% url 'page1'%}">
                                 <div class=><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                DateSet
                             </a>
                             <a class="nav-link" href="{% url 'page2'%}">
                                 <div class=><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                WinRate EDA
                             </a>
                             <a class="nav-link" href="{% url 'page3'%}">
                                 <div class=><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                CS EDA
                             </a>
-                            <a class="nav-link" href="{% url 'page4'%}">
-                                <div class=><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
-                            </a>
-        
                         </div>
                     </div>
                     
@@ -56,7 +52,10 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    
+                    <div class="container-fluid px-4">
+                        <img src="{% static 'main/image/purpose.PNG' %}" style="width: 90%; height: 250px;">
+                        <img src="{% static 'main/image/topic.PNG' %}" style="width: 90%; height: 300px;">
+                    </div>   
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
