@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-7ylu*+zc!u5(g*mn701#w-_ssr7)thsw%#@s1co-qcb$_+h=d_
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ".ap-northeast-2.compute.amazonaws.com"    
+    ".ap-northeast-2.compute.amazonaws.com",
+    "*",
 ]
 
 
@@ -34,6 +35,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'main',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"main","templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,9 +120,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 #STATIC_URL = 'static/'
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [ os.path.join(BASE_DIR,"main","static") ] 
+STATICFILES_FINDERS = ( 'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder', ) 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
